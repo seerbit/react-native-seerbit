@@ -1,4 +1,9 @@
-import { NativeModules, Platform } from 'react-native';
+import {
+  NativeModules,
+  Platform,
+  NativeEventEmitter,
+  Alert,
+} from 'react-native';
 
 const LINKING_ERROR =
   `The package 'seerbit-react-native-checkout' doesn't seem to be linked. Make sure: \n\n` +
@@ -6,17 +11,93 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-const SeerbitReactNativeCheckout = NativeModules.SeerbitReactNativeCheckout
+const throwableError = () => {
+  return new Proxy(
+    {},
+    {
+      get() {
+        throw new Error(LINKING_ERROR);
+      },
+    }
+  );
+};
+
+const SeerbitCheckoutForIos = NativeModules.SeerbitReactNativeCheckout
   ? NativeModules.SeerbitReactNativeCheckout
-  : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
+  : throwableError();
+const SeerbitCheckoutForAndroid = NativeModules.SeerbitCheckout
+  ? NativeModules.SeerbitCheckout
+  : throwableError();
+
+export const eventEmitter = new NativeEventEmitter(
+  Platform.OS === 'android' ? SeerbitCheckoutForAndroid : SeerbitCheckoutForIos
+);
+
+type CheckoutData = {
+  amount: string;
+  phoneNumber: string;
+  publicKey: string;
+  fullName: string;
+  email: string;
+  productDescription?: string;
+  pocketReference?: string;
+  transactionPaymentReference?: string;
+  vendorId?: string;
+  country?: string;
+  currency?: string;
+  tokenize?: boolean;
+  productId?: string;
+};
+
+export async function openCheckout({
+  amount,
+  phoneNumber,
+  publicKey,
+  fullName,
+  email,
+  productDescription = '',
+  pocketReference = '',
+  transactionPaymentReference = '',
+  vendorId = '',
+  country = '',
+  currency = '',
+  tokenize = false,
+  productId = '',
+}: CheckoutData) {
+  if (Platform.OS === 'ios' && Number(Platform.Version) < 16)
+    return Alert.alert(
+      'This gateway works on ios 16 and later. You may need to upgrade your ios version.'
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return SeerbitReactNativeCheckout.multiply(a, b);
+  return Platform.OS === 'android'
+    ? SeerbitCheckoutForAndroid.open(
+        amount,
+        phoneNumber,
+        publicKey,
+        fullName,
+        email,
+        productDescription,
+        pocketReference,
+        transactionPaymentReference,
+        vendorId,
+        country,
+        currency,
+        tokenize,
+        productId
+      )
+    : await SeerbitCheckoutForIos.open(
+        amount,
+        phoneNumber,
+        publicKey,
+        fullName,
+        email,
+        productDescription,
+        pocketReference,
+        transactionPaymentReference,
+        vendorId,
+        country,
+        currency,
+        tokenize,
+        productId
+      );
 }
