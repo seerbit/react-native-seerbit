@@ -4,6 +4,7 @@ import SeerBitCheckout
 import Foundation
 
 
+@available(iOS 16.0, *)
 @objc(SeerbitReactNativeCheckout)
 class SeerbitReactNativeCheckout: NSObject {
 

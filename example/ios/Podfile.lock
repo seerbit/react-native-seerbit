@@ -1062,8 +1062,8 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-    - SeerBitCheckout (~> 1.2.6)
-  - SeerBitCheckout (1.2.6):
+    - SeerBitCheckout (~> 1.2.8)
+  - SeerBitCheckout (1.2.8):
     - SDWebImage (~> 5.18.7)
     - SDWebImageSwiftUI (~> 2.2.6)
   - SocketRocket (0.6.1)
@@ -1285,11 +1285,11 @@ SPEC CHECKSUMS:
   ReactCommon: e168ee1704806f10f47ee8c7f825b5850b18eaea
   SDWebImage: 2d6d229046fea284d62e36bfb8ebe8287dfc5b10
   SDWebImageSwiftUI: 65a2c8b4b0d9577f2e11556cb163cc4613b9ee54
-  seerbit-react-native-checkout: 9181e2cfb750e6d71207abd2d1370a58ede3a6a9
-  SeerBitCheckout: 609d9101a7d6cdf8cde3b61eb2b4f86493d26334
+  seerbit-react-native-checkout: eb27951ca58522242ceb4d7e90ec3c1e61e2d165
+  SeerBitCheckout: 9cf4bf67e94388929274d531636176c173d722e5
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: d17d2cc8105eed528474683b42e2ea310e1daf61
 
-PODFILE CHECKSUM: fc928d4f4434be1ec6e475ce2fea87a567bbc685
+PODFILE CHECKSUM: c8fbe07d491a248c6c982db1c324f2a830c1d693
 
 COCOAPODS: 1.15.2
