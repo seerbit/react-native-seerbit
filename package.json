@@ -1,6 +1,6 @@
 {
   "name": "react-native-seerbit",
-  "version": "0.1.9",
+  "version": "0.2.1",
   "description": "SeerBit react native  sdk is used to seamlessly integrate SeerBit payment gateways into react native  applications. It is very simple and easy to integrate.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -39,14 +39,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/seerbit/seerbit-react-native-checkout.git"
+    "url": "git+https://github.com/seerbit/react-native-seerbit.git"
   },
   "author": "SeerBit <developers@seerbit.com> (https://github.com/seerbit)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/seerbit/seerbit-react-native-checkout/issues"
+    "url": "https://github.com/seerbit/react-native-seerbit/issues"
   },
-  "homepage": "https://github.com/seerbit/seerbit-react-native-checkout#readme",
+  "homepage": "https://github.com/seerbit/react-native-seerbit#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
