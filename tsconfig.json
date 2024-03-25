@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "seerbit-react-native-checkout": ["./src/index"]
+      "react-native-seerbit": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
