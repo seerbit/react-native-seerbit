@@ -17,13 +17,13 @@ SeerBit React Native sdk is used to seamlessly integrate SeerBit payment gateway
 - Add the package to your React native project: 
 
 ```
-npm install seerbit-react-native-checkout
+npm install react-native-seerbit
 ```
 
 or 
 
 ```
-yarn add seerbit-react-native-checkout
+yarn add react-native-seerbit
 ```
 
 - Then navigate the ios folder of your project, run 
@@ -41,7 +41,7 @@ pod install
 - After adding the package to your project, import SeerBitCheckout methods into the file you want to use them like so:
 
 ```
-import { openCheckout, eventEmitter } from 'seerbit-react-native-checkout';
+import { openCheckout, eventEmitter } from 'react-native-seerbit';
 ```
 
 ### Configure deeplink in your project
@@ -85,7 +85,7 @@ seerbitioscheckout
  ```
 import * as React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, SafeAreaView } from 'react-native';
-import { openCheckout, eventEmitter } from 'seerbit-react-native-checkout';
+import { openCheckout, eventEmitter } from 'react-native-seerbit';
 
 interface Props {
     placeholder: string,

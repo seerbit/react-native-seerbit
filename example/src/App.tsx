@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, SafeAreaView } from 'react-native';
-import { openCheckout, eventEmitter } from 'seerbit-react-native-checkout';
+import { openCheckout, eventEmitter } from 'react-native-seerbit';
 import CustomInput from './CustomInput';
 
 export default function App() {
@@ -13,11 +13,11 @@ export default function App() {
 
 
   React.useEffect(() => {
-    let closeEventListener = eventEmitter.addListener('close', (event) => {
-      console.log('user closed', event.eventProperty);
+    let closeEventListener = eventEmitter.addListener('close', (event: any) => {
+      console.log('user closed', event?.eventProperty);
     });
-    let successEventListener = eventEmitter.addListener('success', (event) => {
-      console.log('user success ', event.eventProperty, ' sopoekm');
+    let successEventListener = eventEmitter.addListener('success', (event: any) => {
+      console.log('user success ', event?.eventProperty, ' sopoekm');
     });
     return () => {
       closeEventListener.remove();
