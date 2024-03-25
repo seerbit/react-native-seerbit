@@ -14,7 +14,8 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org/'
       - name: Publish package on NPM 📦 
-        run: npm install
-             npm publish
+        run: |
+             npm install
+             npm publish 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
