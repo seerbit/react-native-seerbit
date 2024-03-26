@@ -32,11 +32,16 @@ yarn add react-native-seerbit
 pod install
 ```
 
- - If you encounter an error, be sure that flipper is disabled and that you have
+ - If you encounter an error, be sure that flipper is disabled by commenting out the following line in your podfile
+ ```
+  :flipper_configuration => flipper_config,
+ ```
+ and be sure that use_frameworks is enabled by adding the following line in your podfile before target
  ```
  use_frameworks! :linkage => :static 
  ```
- in your podfile. 
+
+ If you still encounter an error that states like "Multiple commands produce........./Assets.car", then open your project in xcode, navigate to Build phases, go to Copy Bundle resources and click on any copy of Assets.xcassets to activate the minus(-) sign, then remove the assets. This should fix all problems.
 
 - After adding the package to your project, import SeerBitCheckout methods into the file you want to use them like so:
 
