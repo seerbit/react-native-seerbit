@@ -886,11 +886,11 @@ PODS:
   - React-Mapbuffer (0.73.6):
     - glog
     - React-debug
-  - react-native-seerbit (0.1.1):
+  - react-native-seerbit (0.3.1):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-    - SeerBitCheckout (~> 1.2.8)
+    - SeerBitCheckout (~> 1.2.9)
   - React-nativeconfig (0.73.6)
   - React-NativeModulesApple (0.73.6):
     - glog
@@ -1063,7 +1063,7 @@ PODS:
   - SDWebImage/Core (5.18.12)
   - SDWebImageSwiftUI (2.2.7):
     - SDWebImage (~> 5.10)
-  - SeerBitCheckout (1.2.8):
+  - SeerBitCheckout (1.2.9):
     - SDWebImage (~> 5.18.7)
     - SDWebImageSwiftUI (~> 2.2.6)
   - SocketRocket (0.6.1)
@@ -1263,7 +1263,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 85583ef014ce53d731a98c66a0e24496f7a83066
   React-logger: 3eb80a977f0d9669468ef641a5e1fabbc50a09ec
   React-Mapbuffer: d81d930c1b7f4db284e1d721fe7fdc99230ca108
-  react-native-seerbit: 3f287ed80a6400b443a30274096797e9c62f0561
+  react-native-seerbit: 958f5832af81712755beb800f26b0ea786678b29
   React-nativeconfig: e700ac3ec3d66329076bd2c2787a204411815d43
   React-NativeModulesApple: f7fa541118d195ac850ca2ea460f338152ced167
   React-perflogger: 5f49905de275bac07ac7ea7f575a70611fa988f2
@@ -1286,7 +1286,7 @@ SPEC CHECKSUMS:
   ReactCommon: e168ee1704806f10f47ee8c7f825b5850b18eaea
   SDWebImage: 2d6d229046fea284d62e36bfb8ebe8287dfc5b10
   SDWebImageSwiftUI: 65a2c8b4b0d9577f2e11556cb163cc4613b9ee54
-  SeerBitCheckout: 9cf4bf67e94388929274d531636176c173d722e5
+  SeerBitCheckout: 7b85b7ca8fa144209455d9f603619b04c1fbd5d9
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: d17d2cc8105eed528474683b42e2ea310e1daf61
 
