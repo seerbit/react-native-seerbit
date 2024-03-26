@@ -1,6 +1,6 @@
 {
   "name": "react-native-seerbit",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "SeerBit react native  sdk is used to seamlessly integrate SeerBit payment gateways into react native  applications. It is very simple and easy to integrate.",
   "main": "src/index",
   "module": "src/index",
