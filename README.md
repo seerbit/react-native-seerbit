@@ -41,7 +41,12 @@ pod install
  use_frameworks! :linkage => :static 
  ```
 
- If you still encounter an error that states like "Multiple commands produce........./Assets.car", then open your project in xcode, navigate to Build phases, go to Copy Bundle resources and click on any copy of Assets.xcassets to activate the minus(-) sign, then remove the assets. This should fix all problems.
+ If you still encounter an error that states like "Multiple commands produce........./Assets.car", then also add the below code to your podfile, before target. 
+ 
+ ```
+ install! 'cocoapods', :disable_input_output_paths => true
+ ```
+ This should fix all problems.
 
 - After adding the package to your project, import SeerBitCheckout methods into the file you want to use them like so:
 
