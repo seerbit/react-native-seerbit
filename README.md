@@ -173,10 +173,10 @@ export default function App() {
 
   React.useEffect(() => {
     let closeEventListener = eventEmitter.addListener('close', (event) => {
-      console.log('user closed', event.eventProperty);
+      console.log('user closed', event?.eventProperty);
     });
     let successEventListener = eventEmitter.addListener('success', (event) => {
-      console.log('user success ', event.eventProperty, ' sopoekm');
+      console.log('user success ', event?.eventProperty);
     });
     return () => {
       closeEventListener.remove();

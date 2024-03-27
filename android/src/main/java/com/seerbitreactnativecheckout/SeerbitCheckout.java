@@ -14,9 +14,13 @@ import java.util.Objects;
 
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.Arguments;
 
 
-public class SeerbitCheckout extends ReactContextBaseJavaModule implements ActionListener {
+
+
+public class SeerbitCheckout extends ReactContextBaseJavaModule  implements ActionListener {
     SeerbitCheckout(ReactApplicationContext context) {
         super(context);
     }
@@ -26,8 +30,8 @@ public class SeerbitCheckout extends ReactContextBaseJavaModule implements Actio
     public String getName() { return "SeerbitCheckout"; }
 
     @ReactMethod
-    private void sendSuccessEvent(ReactContext reactContext, String eventName, @Nullable QueryData queryData) {
-        reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, queryData);
+    private void sendSuccessEvent(ReactContext reactContext, String eventName /* @Nullable WritableMap queryData)*/ ){
+        reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName, null);
 }
 
     @ReactMethod
@@ -78,5 +82,7 @@ public void removeListeners(Integer count) {}
     public void onClose() { sendCloseEvent(getReactApplicationContext(), "close"); }
 
     @Override
-    public void onSuccess(@Nullable QueryData queryData) {sendSuccessEvent(getReactApplicationContext(), "success", queryData);}
+    public void onSuccess(@Nullable QueryData queryData) {
+        // sendSuccessEvent(getReactApplicationContext(), "success", queryData);
+        }
 }
